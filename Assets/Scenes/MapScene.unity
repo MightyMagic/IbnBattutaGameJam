@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 213114173}
   m_Layer: 0
   m_Name: Country A
-  m_TagString: Untagged
+  m_TagString: MapRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 408853588}
   m_Layer: 0
   m_Name: Country C
-  m_TagString: Untagged
+  m_TagString: MapRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 477548208}
   m_Layer: 0
   m_Name: Country B
-  m_TagString: Untagged
+  m_TagString: MapRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
+  targetRegion: {fileID: 0}
 --- !u!1 &1139377568
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +865,7 @@ Transform:
   m_GameObject: {fileID: 1225626360}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -929,7 +930,7 @@ GameObject:
   - component: {fileID: 1515227031}
   m_Layer: 0
   m_Name: Country E
-  m_TagString: Untagged
+  m_TagString: MapRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1051,7 +1052,7 @@ GameObject:
   - component: {fileID: 1647740264}
   m_Layer: 0
   m_Name: Country D
-  m_TagString: Untagged
+  m_TagString: MapRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

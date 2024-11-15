@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 213114172}
   - component: {fileID: 213114171}
   - component: {fileID: 213114170}
+  - component: {fileID: 213114173}
   m_Layer: 0
   m_Name: Country A
   m_TagString: Untagged
@@ -227,6 +228,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213114168}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &213114173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213114168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a8b1eecaf49d244ad3aae3550181fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1.2
 --- !u!1 &408853583
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +253,7 @@ GameObject:
   - component: {fileID: 408853587}
   - component: {fileID: 408853586}
   - component: {fileID: 408853585}
+  - component: {fileID: 408853588}
   m_Layer: 0
   m_Name: Country C
   m_TagString: Untagged
@@ -335,6 +350,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408853583}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &408853588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408853583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a8b1eecaf49d244ad3aae3550181fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1.2
 --- !u!1 &477548203
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +375,7 @@ GameObject:
   - component: {fileID: 477548207}
   - component: {fileID: 477548206}
   - component: {fileID: 477548205}
+  - component: {fileID: 477548208}
   m_Layer: 0
   m_Name: Country B
   m_TagString: Untagged
@@ -443,6 +472,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477548203}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &477548208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477548203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a8b1eecaf49d244ad3aae3550181fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1.2
 --- !u!1 &510094682
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +926,7 @@ GameObject:
   - component: {fileID: 1515227030}
   - component: {fileID: 1515227029}
   - component: {fileID: 1515227028}
+  - component: {fileID: 1515227031}
   m_Layer: 0
   m_Name: Country E
   m_TagString: Untagged
@@ -980,6 +1023,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515227026}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1515227031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515227026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a8b1eecaf49d244ad3aae3550181fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1.2
 --- !u!1 &1647740259
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +1048,7 @@ GameObject:
   - component: {fileID: 1647740263}
   - component: {fileID: 1647740262}
   - component: {fileID: 1647740261}
+  - component: {fileID: 1647740264}
   m_Layer: 0
   m_Name: Country D
   m_TagString: Untagged
@@ -1088,6 +1145,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647740259}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1647740264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647740259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a8b1eecaf49d244ad3aae3550181fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

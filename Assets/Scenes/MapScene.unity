@@ -612,7 +612,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  targetRegion: {fileID: 0}
 --- !u!1 &1139377568
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +762,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b03ce29a0ea5f43af21442bfa7ff60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRegion: {fileID: 213114168}
+  targetRegion: {fileID: 0}
+  travelDistance: 0
 --- !u!4 &1202023556
 Transform:
   m_ObjectHideFlags: 0

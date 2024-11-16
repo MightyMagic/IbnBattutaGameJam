@@ -4,7 +4,11 @@ public class MapRegion : MonoBehaviour
 {
 
     [Header("Region Data")]
-    [SerializeField] private Region region;
+    [SerializeField] public string regionName;
+    [SerializeField] public string resourceType;
+    [SerializeField] private string maxTrade;
+    [SerializeField] private string midTrade;
+    [SerializeField] private string minTrade;
 
     [SerializeField] private float scaleMultiplier = 1.2f;
     private Vector3 originalScale;
@@ -22,10 +26,5 @@ public class MapRegion : MonoBehaviour
     private void OnMouseExit()
     {
         transform.localScale = originalScale;
-    }
-
-    public Region GetRegion()
-    {
-        return region;
     }
 }

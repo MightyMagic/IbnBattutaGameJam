@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 39443991}
   - component: {fileID: 39443990}
   m_Layer: 0
-  m_Name: Morocco
+  m_Name: India
   m_TagString: MapRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,6 +152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: 4b3f128a375f02841acf59488cb3429b, type: 2}
+  regionName: India
+  resourceType: spices
+  maxTrade: 
+  midTrade: 
+  minTrade: 
   scaleMultiplier: 1.2
 --- !u!65 &39443991
 BoxCollider:
@@ -364,6 +369,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: a4b509e562ec17943a39bee96cab368b, type: 2}
+  regionName: China
+  resourceType: silk
+  maxTrade: 
+  midTrade: 
+  minTrade: 
   scaleMultiplier: 1.2
 --- !u!1 &408853583
 GameObject:
@@ -487,6 +497,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: 5e89bbe008d7cb94cb3bf1edd3823187, type: 2}
+  regionName: Middle East
+  resourceType: silk
+  maxTrade: 
+  midTrade: 
+  minTrade: 
   scaleMultiplier: 1.2
 --- !u!1 &477548203
 GameObject:
@@ -610,6 +625,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: 8e9073936603cf242a75597e83d6867d, type: 2}
+  regionName: East Africa
+  resourceType: metals
+  maxTrade: 
+  midTrade: 
+  minTrade: 
   scaleMultiplier: 1.2
 --- !u!1 &510094682
 GameObject:
@@ -718,10 +738,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 39443994}
   - {fileID: 987406564}
   - {fileID: 213114169}
   - {fileID: 477548204}
+  - {fileID: 39443994}
   - {fileID: 408853584}
   - {fileID: 1647740260}
   - {fileID: 1515227027}
@@ -788,6 +808,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: 4b3f128a375f02841acf59488cb3429b, type: 2}
+  regionName: Arabia
+  resourceType: spices
+  maxTrade: 
+  midTrade: 
+  minTrade: 
   scaleMultiplier: 1.2
 --- !u!65 &987406566
 BoxCollider:
@@ -1290,6 +1315,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: 721d789f379d88b49a5a4e8ded4f3e87, type: 2}
+  regionName: West Africa
+  resourceType: metals
+  maxTrade: 
+  midTrade: 
+  minTrade: 
   scaleMultiplier: 1.2
 --- !u!1 &1647740259
 GameObject:
@@ -1413,6 +1443,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: 093ba180f5860124490790040886c5d3, type: 2}
+  regionName: North Africa
+  resourceType: grain
+  maxTrade: 
+  midTrade: 
+  minTrade: 
   scaleMultiplier: 1.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

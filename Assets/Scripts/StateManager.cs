@@ -35,9 +35,8 @@ public class StateManager : MonoBehaviour
                 if (hit.transform.CompareTag("MapRegion"))
                 {
                     targetRegion = hit.transform.gameObject;
-                    Region region = targetRegion.GetComponent<MapRegion>().GetRegion();
-                    Debug.Log("Traveling to: " + region.regionName);
-                    Debug.Log("Trades: " + region.resourceType);
+                    Debug.Log("Traveling to: " + targetRegion.GetComponent<MapRegion>().regionName);
+                    Debug.Log("Trades: " + targetRegion.GetComponent<MapRegion>().resourceType);
 
                     travelDistance = Vector3.Distance(
                         currentRegion.transform.position,

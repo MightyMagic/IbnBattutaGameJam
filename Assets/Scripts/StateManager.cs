@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +15,11 @@ public class StateManager : MonoBehaviour
     [SerializeField] private float curveHeight = 1f;
     private LineRenderer lineRenderer;
     public static StateManager Instance { get; private set; }
+
+    [Header("Location References")]
+    [SerializeField] private string from;
+    [SerializeField] private string to;
+    [SerializeField] private string trading;
 
     private void Awake()
     {
@@ -44,8 +50,10 @@ public class StateManager : MonoBehaviour
                 if (hit.transform.CompareTag("MapRegion"))
                 {
                     targetRegion = hit.transform.gameObject;
-                    Debug.Log("Traveling to: " + targetRegion.GetComponent<MapRegion>().regionName);
-                    Debug.Log("Trades: " + targetRegion.GetComponent<MapRegion>().resourceType);
+
+                    from = currentRegion.GetComponent<MapRegion>().regionName;
+                    to = targetRegion.GetComponent<MapRegion>().regionName;
+                    trading = targetRegion.GetComponent<MapRegion>().resourceType;
 
                     travelDistance = Vector3.Distance(
                         currentRegion.transform.position,

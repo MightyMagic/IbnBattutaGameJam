@@ -4,7 +4,7 @@ using UnityEngine;
 public class GlobeController : MonoBehaviour
 {
     [Header("Rotation Settings")]
-    [SerializeField] private float rotationSpeed = 100f;
+    [SerializeField] private float rotationSpeed = 20f;
 
     [Header("Regions")]
     [SerializeField] private GameObject currentRegion;
@@ -24,12 +24,18 @@ public class GlobeController : MonoBehaviour
     private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        float rotateX = vertical * rotationSpeed * Time.deltaTime;
         float rotateY = horizontal * rotationSpeed * Time.deltaTime;
+        float eulerRotatition = transform.rotation.eulerAngles.y;
 
-        transform.Rotate(rotateX, rotateY, 0, Space.World);
+        if (eulerRotatition >= 160f && eulerRotatition <= 240f)
+        {
+            transform.Rotate(0, rotateY, 0, Space.World);
+        } else if (eulerRotatition < 160f ){
+            transform.rotation = Quaternion.Euler(0, 160, 0);
+        } else if (eulerRotatition > 240f)
+        {
+            transform.rotation = Quaternion.Euler(0, 240, 0);
+        }
 
         if (Input.GetMouseButtonDown(0))
         {

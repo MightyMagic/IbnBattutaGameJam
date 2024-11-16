@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0e74054fd91744598b0f2c6041c244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 20
   currentRegion: {fileID: 7556246959691913136}
   targetRegion: {fileID: 0}
   travelDistance: 0

@@ -23,4 +23,9 @@ public class MapRegion : MonoBehaviour
     {
         transform.localScale = originalScale;
     }
+
+    public Region GetRegion()
+    {
+        return region;
+    }
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: middle-east
   m_EditorClassIdentifier: 
   regionName: Middle East
-  resourceType: 
+  resourceType: Silk

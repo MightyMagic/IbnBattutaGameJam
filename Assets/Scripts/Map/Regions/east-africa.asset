@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: east-africa
   m_EditorClassIdentifier: 
   regionName: East Africa
-  resourceType: 
+  resourceType: Metals

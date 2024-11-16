@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: west-africa
   m_EditorClassIdentifier: 
   regionName: West Africa
-  resourceType: 
+  resourceType: Metals

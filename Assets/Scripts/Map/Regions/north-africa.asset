@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: north-africa
   m_EditorClassIdentifier: 
   regionName: North Africa
-  resourceType: 
+  resourceType: Grain

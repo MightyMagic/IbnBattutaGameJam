@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: china
   m_EditorClassIdentifier: 
   regionName: China
-  resourceType: 
+  resourceType: Silk

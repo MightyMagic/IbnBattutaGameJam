@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: arabia
   m_EditorClassIdentifier: 
   regionName: Arabia
-  resourceType: 
+  resourceType: Spices

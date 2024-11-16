@@ -76,6 +76,11 @@ public class StateManager : MonoBehaviour
             Vector3 controlPoint = (currentRegion.transform.position + targetRegion.transform.position) / 2;
             controlPoint += Vector3.up * curveHeight;
 
+            // Vector3 midPoint = (currentRegion.transform.position + targetRegion.transform.position) / 2;
+            // Vector3 direction = (targetRegion.transform.position - currentRegion.transform.position).normalized; // Direction of the curve
+            // Vector3 curveDirection = Vector3.Cross(direction, Vector3.up).normalized; // Perpendicular vector for curve
+            // Vector3 controlPoint = midPoint + curveDirection * curveHeight;
+
             Vector3[] points = new Vector3[curveResolution];
             for (int i = 0; i < curveResolution; i++)
             {

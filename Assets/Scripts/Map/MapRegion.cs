@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class MapRegion : MonoBehaviour
 {
-    private Vector3 originalScale;
+
+    [Header("Region Data")]
+    [SerializeField] private Region region;
 
     [SerializeField] private float scaleMultiplier = 1.2f;
+    private Vector3 originalScale;
 
     private void Start()
     {

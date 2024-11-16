@@ -15,11 +15,14 @@ public class DynamicLevelManager : MonoBehaviour
     [SerializeField] List<EnvironmentData> environmentData;
     [SerializeField] List<FloatingRb> delmeObjects;
 
+    [SerializeField] EnvironmentGeneration environmentGeneration;
+
     void Start()
     {
         // Spawn water
         waterList.Add(waterSurface);
         AppendNewWaterSegment();
+        //environmentGeneration.PopulateWaterTile(waterSurface);
         //GameObject waterGO = Instantiate(waterPrefab, waterNewSpawn.position, Quaternion.identity);
         //waterList.Add(waterGO);
 
@@ -57,7 +60,11 @@ public class DynamicLevelManager : MonoBehaviour
         {
             if (waterList[i].transform.position.z < waterIsNeeded.position.z)
             {
+
+                
                 RemoveWaterSegment(waterList[i]);
+
+
                 AppendNewWaterSegment();
             }
         }
@@ -75,6 +82,8 @@ public class DynamicLevelManager : MonoBehaviour
     {
         GameObject waterGO = Instantiate(waterPrefab, waterNewSpawn.position, Quaternion.identity);
         waterList.Add(waterGO);
+
+        environmentGeneration.PopulateWaterTile(waterGO);
     }
 
     void SpawnEnvironmentObjectsOnWater()

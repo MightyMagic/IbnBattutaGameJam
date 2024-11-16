@@ -21,6 +21,9 @@ public class StateManager : MonoBehaviour
     [SerializeField] private string to;
     [SerializeField] private string trading;
 
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip pickRegionSound;
+
     private void Awake()
     {
         if (Instance == null)
@@ -59,6 +62,8 @@ public class StateManager : MonoBehaviour
                         currentRegion.transform.position,
                         targetRegion.transform.position
                     ) * 1000f;
+
+                    AudioSource.PlayClipAtPoint(pickRegionSound, Camera.main.transform.position);
                 }
                 else {
                     targetRegion = null;

@@ -21,6 +21,12 @@ public class StateManager : MonoBehaviour
     [SerializeField] private string to;
     [SerializeField] private string trading;
 
+    [Header("Resources")]
+    [SerializeField] private int metals = 0;
+    [SerializeField] private int grain = 0;
+    [SerializeField] private int spices = 10;
+    [SerializeField] private int silk = 0;
+
     [Header("Sound Effects")]
     [SerializeField] private AudioClip pickRegionSound;
 

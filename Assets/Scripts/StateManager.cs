@@ -8,6 +8,10 @@ public class StateManager : MonoBehaviour
     [SerializeField] private GameObject targetRegion;
     [SerializeField] private float travelDistance;
 
+    [Header("Travel Trajectory")]
+    [SerializeField] private int curveResolution = 10;
+    [SerializeField] private float curveHeight = 1f;
+    private LineRenderer lineRenderer;
     public static StateManager Instance { get; private set; }
 
     private void Awake()
@@ -23,6 +27,10 @@ public class StateManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -48,5 +56,28 @@ public class StateManager : MonoBehaviour
                 }
             }
         }
+
+        if (targetRegion != null && currentRegion != targetRegion)
+        {
+            Vector3 controlPoint = (currentRegion.transform.position + targetRegion.transform.position) / 2;
+            controlPoint += Vector3.up * curveHeight;
+
+            Vector3[] points = new Vector3[curveResolution];
+            for (int i = 0; i < curveResolution; i++)
+            {
+                float t = i / (float)(curveResolution - 1);
+                points[i] = CalculateBezierPoint(t, currentRegion.transform.position, controlPoint, targetRegion.transform.position);
+            }
+
+            lineRenderer.positionCount = points.Length;
+            lineRenderer.SetPositions(points);
+        }
+    }
+
+    Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2)
+    {
+        return (1 - t) * (1 - t) * p0 +
+               2 * (1 - t) * t * p1 +
+               t * t * p2;
     }
 }

@@ -4,15 +4,25 @@ using UnityEngine;
 public class DynamicLevelManager : MonoBehaviour
 {
     [SerializeField] GameObject waterPrefab;
-    [SerializeField] Transform waterSpawn;
+    [SerializeField] Transform waterIsGone;
+    [SerializeField] Transform waterIsNeeded;
+    [SerializeField] Transform waterNewSpawn;
     [SerializeField] GameObject waterSurface;
     [SerializeField] float waterSpeed;
 
+
+    public List<GameObject> waterList = new List<GameObject>();
     [SerializeField] List<EnvironmentData> environmentData;
     [SerializeField] List<FloatingRb> delmeObjects;
 
     void Start()
     {
+        // Spawn water
+        waterList.Add(waterSurface);
+        AppendNewWaterSegment();
+        //GameObject waterGO = Instantiate(waterPrefab, waterNewSpawn.position, Quaternion.identity);
+        //waterList.Add(waterGO);
+
         // Fetch passed info about the upcoming level
 
         // Randomize weather
@@ -29,11 +39,47 @@ public class DynamicLevelManager : MonoBehaviour
         }
 
         MoveWater();
+        MaintainWater();
     }
 
     void MoveWater()
     {
-        waterSurface.transform.position += new Vector3(0f, 0f, waterSpeed * Time.deltaTime);
+        for(int i = 0; i < waterList.Count; i++)
+        {
+            waterList[i].transform.position += new Vector3(0f, 0f, waterSpeed * Time.deltaTime);
+        }
+
+    }
+
+    void MaintainWater()
+    {
+        for (int i = 0; i < waterList.Count; i++)
+        {
+            if (waterList[i].transform.position.z < waterIsNeeded.position.z)
+            {
+                RemoveWaterSegment(waterList[i]);
+                AppendNewWaterSegment();
+            }
+        }
+    }
+
+    void RemoveWaterSegment(GameObject go)
+    {
+        waterList.Remove(go);
+        Destroy(go);
+
+        
+    }
+
+    void AppendNewWaterSegment()
+    {
+        GameObject waterGO = Instantiate(waterPrefab, waterNewSpawn.position, Quaternion.identity);
+        waterList.Add(waterGO);
+    }
+
+    void SpawnEnvironmentObjectsOnWater()
+    {
+
     }
 
     

@@ -66,6 +66,8 @@ public class DynamicCollectible : MonoBehaviour
 
             }
 
+           
+
             if (other.transform.position.x > this.transform.position.x)
             {
                 directionOfBump = rb.transform.right * bumpForce;
@@ -77,6 +79,8 @@ public class DynamicCollectible : MonoBehaviour
                 directionOfBump = -rb.transform.right * bumpForce;
                 rb.AddForce(directionOfBump * bumpForce, ForceMode.Impulse);
             }
+
+            source.Play();
 
             Destroy(this.gameObject);
 

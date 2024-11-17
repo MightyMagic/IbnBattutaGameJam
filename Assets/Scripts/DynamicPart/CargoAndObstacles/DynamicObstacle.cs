@@ -75,6 +75,10 @@ public class DynamicObstacle : MonoBehaviour
                 rb.AddForce(directionOfBump * bumpForce, ForceMode.Impulse);
             }
 
+            source.Play();
+
         }
+
+       
     }
 }

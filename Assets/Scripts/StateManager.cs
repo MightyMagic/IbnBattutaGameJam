@@ -1,20 +1,29 @@
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StateManager : MonoBehaviour
 {
-
-    [Header("Regions")]
-    [SerializeField] private GameObject currentRegion;
-    [SerializeField] private GameObject targetRegion;
-    [SerializeField] private float travelDistance;
-
     public static StateManager Instance { get; private set; }
+
+    [Header("Location References")]
+    [SerializeField] private string _from;
+    [SerializeField] private string _to;
+    [SerializeField] private string _trading;
+    [SerializeField] private float _travelDistance;
+
+    [Header("Resources")]
+    [SerializeField] private int metals = 0;
+    [SerializeField] private int grain = 0;
+    [SerializeField] private int spices = 10;
+    [SerializeField] private int silk = 0;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -22,27 +31,19 @@ public class StateManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void SetTravel(string from, string to, float travelDistance, string trading)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        _from = from;
+        _to = to;
+        _trading = trading;
+        _travelDistance = travelDistance;
+    }
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.transform.CompareTag("MapRegion"))
-                {
-                    targetRegion = hit.transform.gameObject;
-                    travelDistance = Vector3.Distance(
-                        currentRegion.transform.position,
-                        targetRegion.transform.position
-                    ) * 1000f;
-                }
-                else {
-                    targetRegion = null;
-                }
-            }
+    public void StartTravel()
+    {
+        if (_travelDistance > 0)
+        {
+            SceneManager.LoadScene("DynamicLevelPrototype");
         }
     }
 }

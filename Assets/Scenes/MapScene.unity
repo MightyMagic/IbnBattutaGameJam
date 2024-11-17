@@ -1611,6 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingPanel: {fileID: 879869193}
+  background: {fileID: 1301672205}
 --- !u!1 &978217802
 GameObject:
   m_ObjectHideFlags: 0

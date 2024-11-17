@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadingPanel : MonoBehaviour
 {
     [SerializeField] private GameObject loadingPanel;
-    public List<Image> loadingImages;
-    public List<Image> loadingTexts;
+    [SerializeField] private Image background;
 
     public static LoadingPanel Instance { get; private set; }
 
@@ -25,6 +24,10 @@ public class LoadingPanel : MonoBehaviour
 
     public void StartLoading()
     {
+        int randomIndex = Random.Range(0, 3);
+        string path = $"Loading/loading{randomIndex}";
+        background.sprite = Resources.Load<Sprite>(path);
+
         loadingPanel.SetActive(true);
     }
 }

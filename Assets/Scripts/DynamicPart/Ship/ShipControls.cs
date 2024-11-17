@@ -55,13 +55,13 @@ public class ShipControls : MonoBehaviour
         targetRotation = Mathf.Clamp(targetRotation, -maxAngle, maxAngle);
 
         // If steer is low, rotate back towards zero (center position)
-        if (Mathf.Abs(steer) < 0.1f)
-        {
-            targetRotation = Mathf.MoveTowards(currentYRotation, 0f, angularSpeed * Time.deltaTime);
-        }
+        //if (Mathf.Abs(steer) < 0.1f)
+        //{
+        //    targetRotation = Mathf.MoveTowards(currentYRotation, 0f, angularSpeed * Time.deltaTime);
+        //}
 
         // Apply the calculated rotation
-        modelObject.transform.localRotation = Quaternion.Euler(0f, targetRotation, 0f);
+        modelObject.transform.localRotation = Quaternion.Euler(modelObject.transform.localRotation.eulerAngles.x, targetRotation, modelObject.transform.localRotation.eulerAngles.z);
     }
 
     

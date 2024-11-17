@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -51,7 +52,15 @@ public class StateManager : MonoBehaviour
     {
         if (_travelDistance > 0)
         {
-            SceneManager.LoadScene("DynamicLevelPrototype");
+            StartCoroutine(LoadScene("DynamicLevelPrototype"));
         }
+    }
+
+    private IEnumerator LoadScene(string sceneName)
+    {
+
+        LoadingPanel.Instance.StartLoading();
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(sceneName);
     }
 }

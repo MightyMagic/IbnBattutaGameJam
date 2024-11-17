@@ -7,7 +7,9 @@ public class EnvironmentGeneration : MonoBehaviour
     [SerializeField] int xSize;
     [SerializeField] int zSize;
                      
+    [SerializeField] int yCoordinateForStones;
     [SerializeField] int yCoordinate;
+    [SerializeField] int yCoordinateForChests;
 
     [SerializeField] int distanceBetweenCells;
 
@@ -86,7 +88,7 @@ public class EnvironmentGeneration : MonoBehaviour
                     //bufferGo = Instantiate(stoneList[Random.Range(0, stoneList.Count)].Prefab, currentPosition, Quaternion.identity);
                     //bufferGo.transform.parent = waterTile.transform;
 
-                    SpawnObject(stoneList[Random.Range(0, stoneList.Count)].Prefab, waterTile, currentPosition);
+                    SpawnObject(stoneList[Random.Range(0, stoneList.Count)].Prefab, waterTile, currentPosition, yCoordinateForStones);
                 }
             }
             else
@@ -100,20 +102,20 @@ public class EnvironmentGeneration : MonoBehaviour
                     //bufferGo = Instantiate(collectiblesList[Random.Range(0, collectiblesList.Count)].Prefab, currentPosition, Quaternion.identity);
                     //bufferGo.transform.parent = waterTile.transform;
 
-                    SpawnObject(collectiblesList[Random.Range(0, collectiblesList.Count)].Prefab, waterTile, currentPosition);
+                    SpawnObject(collectiblesList[Random.Range(0, collectiblesList.Count)].Prefab, waterTile, currentPosition, yCoordinateForChests);
                 }
                 else
                 {
                     //bufferGo = Instantiate(obstaclesList[Random.Range(0, obstaclesList.Count)].Prefab, currentPosition, Quaternion.identity);
                     //bufferGo.transform.parent = waterTile.transform;
 
-                    SpawnObject(obstaclesList[Random.Range(0, obstaclesList.Count)].Prefab, waterTile, currentPosition);
+                    SpawnObject(obstaclesList[Random.Range(0, obstaclesList.Count)].Prefab, waterTile, currentPosition, 0f);
                 }
             }
         }
     }
 
-    void SpawnObject(GameObject goToSpawn, GameObject waterTile, Vector3 centerPoint)
+    void SpawnObject(GameObject goToSpawn, GameObject waterTile, Vector3 centerPoint, float yOffset)
     {
         // Calculate a random radius between 0 and maxRadius
         float radius = Random.Range(0f, centerOffset);
@@ -128,14 +130,28 @@ public class EnvironmentGeneration : MonoBehaviour
         float x = centerPoint.x + radius * Mathf.Cos(angleRad);
         float z = centerPoint.z + radius * Mathf.Sin(angleRad);
 
-        // You can leave the y-position as is, or randomize it as well if needed.
-        float y = centerPoint.y;
+        float y = yOffset;
+
+        
 
         // Set the object's position
         Vector3 spawnPoint = new Vector3(x, y, z);
 
         GameObject go = Instantiate(goToSpawn, spawnPoint, Quaternion.identity);
+        RotateRandomY(go);
         go.transform.parent = waterTile.transform;
+    }
+
+    public void RotateRandomY(GameObject go)
+    {
+        // Generate a random Y angle between 0 and 360
+        float randomYAngle = Random.Range(0f, 360f);
+
+        // Get the current rotation
+        Vector3 currentRotation = go.transform.eulerAngles;
+
+        // Apply the random Y angle, keeping X and Z unchanged
+        go.transform.eulerAngles = new Vector3(currentRotation.x, randomYAngle, currentRotation.z);
     }
 
     private void OnDrawGizmos()

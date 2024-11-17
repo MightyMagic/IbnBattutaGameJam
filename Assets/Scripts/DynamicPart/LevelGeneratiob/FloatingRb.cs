@@ -24,6 +24,11 @@ public class FloatingRb : MonoBehaviour
         initialY = transform.position.y;
     }
 
+    private void Update()
+    {
+        FloatAndMove();
+    }
+
     public void FloatAndMove()
     {
 
@@ -33,7 +38,7 @@ public class FloatingRb : MonoBehaviour
 
 
       // Calculate forward (z-axis) motion
-      newZ = transform.position.z - zSpeed * Time.fixedDeltaTime;
+      //newZ = transform.position.z - zSpeed * Time.fixedDeltaTime;
         
 
         //rb.MovePosition(new Vector3(transform.position.x, newY, newZ));

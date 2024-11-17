@@ -1,8 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DynamicLevelManager : MonoBehaviour
 {
+    [Header("Water")]
     [SerializeField] GameObject waterPrefab;
     [SerializeField] Transform waterIsGone;
     [SerializeField] Transform waterIsNeeded;
@@ -17,8 +20,17 @@ public class DynamicLevelManager : MonoBehaviour
 
     [SerializeField] EnvironmentGeneration environmentGeneration;
 
+    //[Header("Story")]
+    //[SerializeField] GameObject CanvasObject;
+    //[SerializeField] Image storyImage;
+    //
+    //[SerializeField] List<Sprite> storySprites;
+    //
+    //[SerializeField] float storyTiming;
+
     void Start()
     {
+       
         // Spawn water
         waterList.Add(waterSurface);
         AppendNewWaterSegment();
@@ -28,11 +40,22 @@ public class DynamicLevelManager : MonoBehaviour
 
         // Fetch passed info about the upcoming level
 
-        // Randomize weather
+        // Setup the timer
 
         // Generate the level based on traits
 
     }
+
+   //IEnumerator  StoryCoroutine()
+   //{
+   //    CanvasObject.SetActive(true);
+   //    storyImage.sprite = storySprites[Random.Range(0, storySprites.Count)];
+   //    yield return new WaitForEndOfFrame();
+   //    yield return new WaitForSeconds(storyTiming);
+   //
+   //    CanvasObject.SetActive(false);
+   //
+   //}
 
     void Update()
     {

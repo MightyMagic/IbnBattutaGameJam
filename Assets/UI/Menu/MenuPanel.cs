@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuPanel : MonoBehaviour
@@ -15,7 +16,7 @@ public class MenuPanel : MonoBehaviour
 
     private void PlayGame()
     {
-        menuPanel.SetActive(false);
+        SceneManager.LoadScene("MapScene");
     }
 
     private void QuitGame()

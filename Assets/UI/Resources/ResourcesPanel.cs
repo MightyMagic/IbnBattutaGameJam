@@ -15,4 +15,12 @@ public class ResourcesPanel : MonoBehaviour
         silkText.text = StateManager.Instance.silk.ToString();
         spicesText.text = StateManager.Instance.spices.ToString();
     }
+
+    private void Update()
+    {
+        grainText.text = StateManager.Instance.grain.ToString();
+        metalsText.text = StateManager.Instance.metals.ToString();
+        silkText.text = StateManager.Instance.silk.ToString();
+        spicesText.text = StateManager.Instance.spices.ToString();
+    }
 }

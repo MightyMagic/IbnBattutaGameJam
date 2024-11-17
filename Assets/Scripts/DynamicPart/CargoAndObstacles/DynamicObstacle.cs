@@ -4,6 +4,7 @@ public class DynamicObstacle : MonoBehaviour
 {
     [SerializeField] AudioSource source;
     [SerializeField] float bumpForce;
+
     void Start()
     {
         
@@ -43,6 +44,24 @@ public class DynamicObstacle : MonoBehaviour
             Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
 
             Vector3 directionOfBump;
+
+            if (StateManager.Instance.silk > 0)
+            {
+                StateManager.Instance.silk--;
+                //
+            }
+            else if(StateManager.Instance.grain > 0)
+            {
+                StateManager.Instance.grain--;
+            }
+            else if(StateManager.Instance.metals > 0)
+            {
+                StateManager.Instance.metals--;
+            }
+            else if(StateManager.Instance.spices > 0)
+            {
+                StateManager.Instance.spices--;
+            }
 
             if (other.transform.position.x > this.transform.position.x)
             {

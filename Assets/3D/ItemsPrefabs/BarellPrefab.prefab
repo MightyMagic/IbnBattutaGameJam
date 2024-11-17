@@ -97,8 +97,8 @@ GameObject:
   - component: {fileID: 8908553966400823705}
   - component: {fileID: -4974576203490145733}
   - component: {fileID: 9163214016700816338}
-  - component: {fileID: 1493083472766185758}
   - component: {fileID: 6340435328831645691}
+  - component: {fileID: 7296649359611239451}
   m_Layer: 0
   m_Name: BarellPrefab
   m_TagString: Untagged
@@ -165,20 +165,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1493083472766185758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8814233127348061082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 503dc1b3b87209348b2300da7e6616b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  bumpForce: 10
 --- !u!65 &6340435328831645691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -200,3 +186,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 43.45688, y: 37.735596, z: 37.794426}
   m_Center: {x: 15.203026, y: 0.98601246, z: 1.0181923}
+--- !u!114 &7296649359611239451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814233127348061082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b56471c48b8ef4cbb4a14068f42e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  bumpForce: 0

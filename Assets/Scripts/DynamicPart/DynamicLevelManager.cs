@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DynamicLevelManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class DynamicLevelManager : MonoBehaviour
 
     [SerializeField] EnvironmentGeneration environmentGeneration;
 
+    public float timerToEnd;
+    public float timer = 0f;
     //[Header("Story")]
     //[SerializeField] GameObject CanvasObject;
     //[SerializeField] Image storyImage;
@@ -28,12 +31,14 @@ public class DynamicLevelManager : MonoBehaviour
     //
     //[SerializeField] float storyTiming;
 
+
     void Start()
     {
        
         // Spawn water
         waterList.Add(waterSurface);
         AppendNewWaterSegment();
+
         //environmentGeneration.PopulateWaterTile(waterSurface);
         //GameObject waterGO = Instantiate(waterPrefab, waterNewSpawn.position, Quaternion.identity);
         //waterList.Add(waterGO);
@@ -59,7 +64,12 @@ public class DynamicLevelManager : MonoBehaviour
 
     void Update()
     {
-        
+        timer += Time.deltaTime;
+
+        if(timer > timerToEnd)
+        {
+            SceneManager.LoadScene("MapScene");
+        }
 
         MoveWater();
         MaintainWater();

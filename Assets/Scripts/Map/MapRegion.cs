@@ -15,6 +15,7 @@ public class MapRegion : MonoBehaviour
     [SerializeField] private Image resourceImage;
 
     [SerializeField] private float scaleMultiplier = 1.2f;
+    [SerializeField] private Canvas resourceCanvas;
     private Vector3 originalScale;
 
     private void Start()
@@ -30,10 +31,12 @@ public class MapRegion : MonoBehaviour
     private void OnMouseOver()
     {
         transform.localScale = originalScale * scaleMultiplier;
+        resourceCanvas.gameObject.SetActive(true);
     }
 
     private void OnMouseExit()
     {
         transform.localScale = originalScale;
+        resourceCanvas.gameObject.SetActive(false);
     }
 }

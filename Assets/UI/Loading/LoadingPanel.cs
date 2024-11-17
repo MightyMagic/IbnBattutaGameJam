@@ -6,6 +6,7 @@ public class LoadingPanel : MonoBehaviour
 {
     [SerializeField] private GameObject loadingPanel;
     [SerializeField] private Image background;
+    [SerializeField] private Image quote;
 
     public static LoadingPanel Instance { get; private set; }
 
@@ -26,9 +27,14 @@ public class LoadingPanel : MonoBehaviour
     {
         int randomIndex = Random.Range(0, 2);
         Debug.Log(randomIndex);
+
         string path = $"Loading/loading{randomIndex}";
         background.sprite = Resources.Load<Sprite>(path);
 
+        string quotePath = $"Loading/quote{randomIndex}";
+        quote.sprite = Resources.Load<Sprite>(quotePath);
+
         loadingPanel.SetActive(true);
+
     }
 }

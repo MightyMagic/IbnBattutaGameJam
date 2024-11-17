@@ -16,7 +16,7 @@ public class StateManager : MonoBehaviour
     [Header("Resources")]
     public int metals = 0;
     public int grain = 0;
-    public int spices = 10;
+    public int spices = 0;
     public int silk = 0;
 
     private void Awake()

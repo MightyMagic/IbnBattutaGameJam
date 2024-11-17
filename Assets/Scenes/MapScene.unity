@@ -3473,9 +3473,9 @@ MonoBehaviour:
   _to: 
   _trading: 
   _travelDistance: 0
-  metals: 10
+  metals: 0
   grain: 0
-  spices: 0
+  spices: 10
   silk: 0
 --- !u!4 &1202023556
 Transform:

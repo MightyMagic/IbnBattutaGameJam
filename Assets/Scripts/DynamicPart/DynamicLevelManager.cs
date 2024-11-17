@@ -36,13 +36,11 @@ public class DynamicLevelManager : MonoBehaviour
 
     void Update()
     {
-        for(int i = 0; i < delmeObjects.Count; i++)
-        {
-            delmeObjects[i].FloatAndMove();
-        }
+        
 
         MoveWater();
         MaintainWater();
+        FloatingObjects();
     }
 
     void MoveWater()
@@ -70,12 +68,24 @@ public class DynamicLevelManager : MonoBehaviour
         }
     }
 
+    void FloatingObjects()
+    {
+        for( int i = 0; i < waterList.Count; i++)
+        {
+            foreach(Transform child in waterList[i].transform)
+            {
+                if(child.gameObject.GetComponent<FloatingRb>() != null)
+                {
+                    child.gameObject.GetComponent<FloatingRb>().FloatAndMove();
+                }
+            }
+        }
+    }
+
     void RemoveWaterSegment(GameObject go)
     {
         waterList.Remove(go);
-        Destroy(go);
-
-        
+        Destroy(go);  
     }
 
     void AppendNewWaterSegment()
@@ -85,11 +95,5 @@ public class DynamicLevelManager : MonoBehaviour
 
         environmentGeneration.PopulateWaterTile(waterGO);
     }
-
-    void SpawnEnvironmentObjectsOnWater()
-    {
-
-    }
-
     
 }

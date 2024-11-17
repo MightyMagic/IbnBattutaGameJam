@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 625443974}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -779,8 +779,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 6.291094, z: 32.776188}
+  m_Center: {x: 0, y: 4.991624, z: 0.4617977}
 --- !u!54 &625443973
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -789,7 +789,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625443970}
   serializedVersion: 4
-  m_Mass: 20
+  m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -841,6 +841,7 @@ MonoBehaviour:
   modelObject: {fileID: 114223111}
   maxAngle: 25
   sideSpeed: 50
+  sideAcceleration: 15
   angularSpeed: 80
 --- !u!1 &643445526
 GameObject:
@@ -1117,7 +1118,7 @@ MonoBehaviour:
   waterIsNeeded: {fileID: 216378339}
   waterNewSpawn: {fileID: 1709719802}
   waterSurface: {fileID: 1507636620316499347}
-  waterSpeed: -50
+  waterSpeed: -100
   waterList: []
   environmentData: []
   delmeObjects: []
@@ -1689,6 +1690,7 @@ MonoBehaviour:
   zSize: 1000
   yCoordinate: 2
   distanceBetweenCells: 200
+  centerOffset: 50
   Grid: []
   prefabList:
   - Type: 0
@@ -1697,8 +1699,6 @@ MonoBehaviour:
     Prefab: {fileID: 8814233127348061082, guid: 53c818a728b18e640a3d65bc7b334b48, type: 3}
   - Type: 2
     Prefab: {fileID: 7731266646840679980, guid: db8193b986ab0e943a1b692471b46fb1, type: 3}
-  - Type: 2
-    Prefab: {fileID: 8002278273674925079, guid: d419eb4e1c978a2468c2e1da7d100e8b, type: 3}
   obstaclesList: []
   collectiblesList: []
   stoneList: []

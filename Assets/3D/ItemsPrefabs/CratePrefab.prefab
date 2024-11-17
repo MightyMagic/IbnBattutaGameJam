@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08059e3dbcc6b3d4eba54245687e5868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 2592996695466657384}
   floatAmplitude: 4
   floatFrequency: 1
   zSpeed: 0

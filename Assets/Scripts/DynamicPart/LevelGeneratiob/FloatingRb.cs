@@ -36,6 +36,8 @@ public class FloatingRb : MonoBehaviour
       newZ = transform.position.z - zSpeed * Time.fixedDeltaTime;
         
 
-        rb.MovePosition(new Vector3(transform.position.x, newY, newZ));
+        //rb.MovePosition(new Vector3(transform.position.x, newY, newZ));
+
+        rb.MovePosition(new Vector3(transform.position.x, newY, transform.position.z));
     }
 }

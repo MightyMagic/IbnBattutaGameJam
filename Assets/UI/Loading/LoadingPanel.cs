@@ -24,7 +24,8 @@ public class LoadingPanel : MonoBehaviour
 
     public void StartLoading()
     {
-        int randomIndex = Random.Range(0, 3);
+        int randomIndex = Random.Range(0, 2);
+        Debug.Log(randomIndex);
         string path = $"Loading/loading{randomIndex}";
         background.sprite = Resources.Load<Sprite>(path);
 

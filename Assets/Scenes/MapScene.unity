@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 3469287837018416532}
   - component: {fileID: 1711813856243749214}
   m_Layer: 0
-  m_Name: planet
+  m_Name: Surface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

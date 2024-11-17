@@ -38,6 +38,11 @@ public class StateManager : MonoBehaviour
         {
             SceneManager.LoadScene("MapScene");
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void SetTravel(string from, string to, float travelDistance, string trading)

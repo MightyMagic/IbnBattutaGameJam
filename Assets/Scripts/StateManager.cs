@@ -31,6 +31,14 @@ public class StateManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            SceneManager.LoadScene("MapScene");
+        }
+    }
+
     public void SetTravel(string from, string to, float travelDistance, string trading)
     {
         _from = from;

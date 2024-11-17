@@ -3,13 +3,14 @@ using UnityEngine;
 public class ShipControls : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] Rigidbody rb;
+    public Rigidbody rb;
     [SerializeField] InputCapture inputCapture;
     [SerializeField] GameObject modelObject;
 
     [Header("Movement values")]
     [SerializeField] float maxAngle;
     [SerializeField] float sideSpeed;
+    [SerializeField] float sideAcceleration;
     [SerializeField] float angularSpeed;
 
     
@@ -29,7 +30,13 @@ public class ShipControls : MonoBehaviour
 
     void SteerShip(float steer)
     {
-        rb.linearVelocity = new Vector3(steer * sideSpeed, rb.linearVelocity.y, rb.linearVelocity.z);
+        //rb.linearVelocity = new Vector3(steer * sideSpeed, rb.linearVelocity.y, rb.linearVelocity.z);
+
+        if(Mathf.Abs(rb.linearVelocity.magnitude) < sideSpeed)
+        {
+            rb.linearVelocity += new Vector3(steer * sideAcceleration * Time.deltaTime, rb.linearVelocity.y, rb.linearVelocity.z);
+
+        }
     }
 
     void RotateModel(float steer)

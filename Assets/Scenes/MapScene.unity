@@ -1560,7 +1560,7 @@ GameObject:
   - component: {fileID: 8437628707898562053}
   - component: {fileID: 8437628707898562052}
   m_Layer: 0
-  m_Name: India
+  m_Name: Hindustan
   m_TagString: MapRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1886,7 +1886,7 @@ GameObject:
   - component: {fileID: 7387137137510296511}
   - component: {fileID: 7387137137510296510}
   m_Layer: 0
-  m_Name: Middle East
+  m_Name: Central Asia
   m_TagString: MapRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1926,7 +1926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a8b1eecaf49d244ad3aae3550181fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionName: Middle East
+  regionName: Central Asia
   resourceType: grain
   maxTrade: 
   midTrade: 
@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a8b1eecaf49d244ad3aae3550181fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionName: India
+  regionName: Hindustan
   resourceType: silk
   maxTrade: 
   midTrade: 

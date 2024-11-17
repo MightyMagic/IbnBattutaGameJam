@@ -24,15 +24,17 @@ public class GlobeController : MonoBehaviour
     private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        float rotateY = horizontal * rotationSpeed * Time.deltaTime;
-        float eulerRotatition = transform.rotation.eulerAngles.y;
 
-        if (eulerRotatition >= 160f && eulerRotatition <= 240f)
+        float rotateY = horizontal * rotationSpeed * Time.deltaTime;
+
+        float eulerY = transform.rotation.eulerAngles.y;
+
+        if (eulerY >= 160f && eulerY <= 240f)
         {
             transform.Rotate(0, rotateY, 0, Space.World);
-        } else if (eulerRotatition < 160f ){
+        } else if (eulerY < 160f ){
             transform.rotation = Quaternion.Euler(0, 160, 0);
-        } else if (eulerRotatition > 240f)
+        } else if (eulerY > 240f)
         {
             transform.rotation = Quaternion.Euler(0, 240, 0);
         }

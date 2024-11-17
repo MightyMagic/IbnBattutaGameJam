@@ -1,5 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class GlobeController : MonoBehaviour
 {
@@ -10,6 +12,12 @@ public class GlobeController : MonoBehaviour
     [SerializeField] private GameObject currentRegion;
     [SerializeField] private GameObject targetRegion;
     [SerializeField] private float travelDistance;
+
+    [Header("Travel UI")]
+    [SerializeField] private TextMeshProUGUI fromRegionText;
+    [SerializeField] private TextMeshProUGUI toRegionText;
+    [SerializeField] private TextMeshProUGUI travelDistanceText;
+
 
     [Header("Sound Effects")]
     [SerializeField] private AudioClip pickRegionSound;
@@ -61,6 +69,10 @@ public class GlobeController : MonoBehaviour
                         travelDistance,
                         targetRegion.GetComponent<MapRegion>().resourceType
                     );
+
+                    fromRegionText.text = "From: " + currentRegion.GetComponent<MapRegion>().regionName;
+                    toRegionText.text = "to: " + targetRegion.GetComponent<MapRegion>().regionName;
+                    travelDistanceText.text = travelDistance.ToString("F2") + " km";
 
                     AudioSource.PlayClipAtPoint(pickRegionSound, Camera.main.transform.position);
                 }

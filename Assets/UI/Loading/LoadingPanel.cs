@@ -15,7 +15,6 @@ public class LoadingPanel : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -26,7 +25,6 @@ public class LoadingPanel : MonoBehaviour
     public void StartLoading()
     {
         int randomIndex = Random.Range(0, 2);
-        Debug.Log(randomIndex);
 
         string path = $"Loading/loading{randomIndex}";
         background.sprite = Resources.Load<Sprite>(path);

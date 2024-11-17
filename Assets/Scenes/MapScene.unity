@@ -1044,19 +1044,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 281981330}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1202023555}
-        m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
-        m_MethodName: StartTravel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &281981330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,6 +2884,7 @@ GameObject:
   - component: {fileID: 907191088}
   - component: {fileID: 907191090}
   - component: {fileID: 907191092}
+  - component: {fileID: 907191093}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2964,6 +2953,19 @@ MonoBehaviour:
   metalsText: {fileID: 143966006}
   silkText: {fileID: 718336253}
   spicesText: {fileID: 162868853}
+--- !u!114 &907191093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907191087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f06c7c57620da4d8fbc666efd206cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travelButton: {fileID: 281981329}
 --- !u!1 &978217802
 GameObject:
   m_ObjectHideFlags: 0
